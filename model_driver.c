@@ -12,7 +12,7 @@
 
 
 /*
-//Custom mapping fuctions are used to
+//Custom mapping fuctions are used so
 // - no LPs are unused
 // - event activity is balanced
 
