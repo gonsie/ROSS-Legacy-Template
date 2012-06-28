@@ -45,6 +45,9 @@ int model_main (int argc, char* argv[]) {
 	// g_tw_nkp
 	// g_tw_synchronization_protocol
 
+	//assume 1 lp per node
+	g_tw_nlp = tw_nnodes();
+
 	//set up LPs within ROSS
 	tw_define_lps(g_tw_nlp, sizeof(message), 0);
 	for (i = 0; i < g_tw_nlp; i++) {

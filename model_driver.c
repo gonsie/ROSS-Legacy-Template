@@ -17,6 +17,14 @@
 //Initialize command line arguments
 unsigned int setting_1 = 0;
 
+//Helper Functions
+void SWAP (double *a, double *b) {
+  double tmp = *a;
+  *a = *b;
+  *b = tmp;
+}
+
+
 //Init function
 // - called once for each LP
 // ! LP can only send messages to itself during init !
@@ -38,7 +46,7 @@ void model_init (state *s, tw_lp *lp) {
 }
 
 //Forward event handler
-void model_event (state s, tw_bf *bf, message *in_msg, tw_lp *lp) {
+void model_event (state *s, tw_bf *bf, message *in_msg, tw_lp *lp) {
   int self = lp->gid;
 
   // initialize the bit field
@@ -79,7 +87,7 @@ void model_event (state s, tw_bf *bf, message *in_msg, tw_lp *lp) {
 }
 
 //Reverse Event Handler
-void model_event_reverse (state s, tw_bf *bf, message *in_msg, tw_lp *lp) {
+void model_event_reverse (state *s, tw_bf *bf, message *in_msg, tw_lp *lp) {
   int self = lp->gid;
 
   // undo the state update using the value stored in the 'reverse' message
@@ -110,13 +118,6 @@ void model_event_reverse (state s, tw_bf *bf, message *in_msg, tw_lp *lp) {
 void model_final (state *s, tw_lp *lp){
   int self = lp->gid;
   printf("%d handled %d Hello and %d Goodbye messages\n", self, s->rcvd_count_H, s->rcvd_count_G);
-}
-
-//Helper Functions
-void SWAP (double *a, double *b) {
-  double tmp = *a;
-  *a = *b;
-  *b = tmp;
 }
 
 /*
@@ -200,7 +201,7 @@ tw_lptype model_lps[] = {
     (revent_f) model_event_reverse,
     (final_f) model_final,
     //(map_f) model_map,
-    sizeof(model_state)
+    sizeof(state)
   },
   { 0 },
 };
