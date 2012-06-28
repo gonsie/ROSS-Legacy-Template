@@ -20,7 +20,7 @@ typedef enum {
 //   this contains all data sent in an event
 typedef struct {
   message_type type;
-  int contents;
+  double contents;
   tw_lpid sender;
 } message;
 
@@ -28,13 +28,14 @@ typedef struct {
 //State struct
 //   this defines the state of each LP
 typedef struct {
-  int local_data_1;
-  int local_data_2;
+  int rcvd_count_H;
+  int rcvd_count_G;
+  double value;
 } state;
 
 
 //Command Line Arguments
-extern int setting_1;
+extern unsigned int setting_1;
 
 //Global variables used by both main and driver
 // - this defines the LP types
