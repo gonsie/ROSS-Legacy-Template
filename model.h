@@ -39,7 +39,7 @@ extern unsigned int setting_1;
 
 //Global variables used by both main and driver
 // - this defines the LP types
-tw_lptype model_lps[];
+extern tw_lptype model_lps[];
 
 /* 
 //Custom mapping prototypes

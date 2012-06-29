@@ -185,12 +185,13 @@ tw_lp * model_mapping_to_lp(tw_lpid){
   int local_id = lp_id - g_tw_offset;
   return g_tw_lp[id];
 }
+*/
 
 //Given a gid, return the PE (or node) id
 tw_peid model_map(tw_lpid gid){
   return (tw_peid) gid / g_tw_nlp;
 }
-*/
+//*/
 
 //This defines the fuctions used by the LPs
 //   multiple sets can be defined (for multiple LP types)
@@ -200,7 +201,7 @@ tw_lptype model_lps[] = {
     (event_f) model_event,
     (revent_f) model_event_reverse,
     (final_f) model_final,
-    //(map_f) model_map,
+    (map_f) model_map,
     sizeof(state)
   },
   { 0 },
