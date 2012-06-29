@@ -20,6 +20,7 @@ const tw_optdef model_opts[] = {
 
 int model_main (int argc, char* argv[]) {
 	int i;
+	int num_lps_per_pe;
 
 	tw_opt_add(model_opts);
 	tw_init(&argc, &argv);
@@ -46,10 +47,12 @@ int model_main (int argc, char* argv[]) {
 	// g_tw_synchronization_protocol
 
 	//assume 1 lp per node
-	g_tw_nlp = tw_nnodes();
+	num_lps_per_pe = 1;
 
 	//set up LPs within ROSS
-	tw_define_lps(g_tw_nlp, sizeof(message), 0);
+	tw_define_lps(num_lps_per_pe, sizeof(message), 0);
+	// g_tw_nlp gets set by tw_define_lps
+
 	for (i = 0; i < g_tw_nlp; i++) {
 		tw_lp_settype(i, &model_lps[0]);
 	}
