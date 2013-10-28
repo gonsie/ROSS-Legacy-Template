@@ -4,7 +4,7 @@ As you develop, please replace "model" with appropriately descriptive names for 
 
 # ROSS Integration
 
-1. Download the latest ROSS version: `svn co https://subversion.cs.rpi.edu/svn/rossnet`
-1. Create a new dircetory for your model in rossnet/trunk/ross/models (it should contain all the files in this template).
-2. Edit the rossnet/trunk/ross/models/CMakeLists.txt file and add your directory.
-3. Follow the instructions http://odin.cs.rpi.edu/ross/index.php/Installation for buliding and running your model.
+1. Download the latest ROSS version: `git clone https://github.com/carothersc/ROSS.git`
+1. Create a new dircetory for your model (it should contain all the files in this template).
+2. Sym-link your model directory into ROSS/ross/models/
+3. Follow the instructions https://github.com/carothersc/ROSS/wiki/Installation for buliding and running your model.
