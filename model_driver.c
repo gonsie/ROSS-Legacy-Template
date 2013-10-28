@@ -163,7 +163,7 @@ void model_custom_mapping(void){
 	
 #if VERIFY_MAPPING
 	if (0 == j % 20) { // print detailed output for only some LPs
-	  printf("PE %d\tKP %d\tLP %d", pe->id, kp_id, (int) lp_id + g_tw_lp_offset);
+	  printf("PE %d\tKP %d\tLP %d\n", pe->id, kp_id, (int) lp_id + g_tw_lp_offset);
 	}
 #endif
       }
