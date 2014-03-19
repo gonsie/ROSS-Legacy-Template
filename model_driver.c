@@ -141,7 +141,7 @@ void model_custom_mapping(void){
   if (!nlp_per_kp) tw_error(TW_LOC, "Not enough KPs defined: %d", g_tw_nkp);
   
   //gid of first LP on this PE (aka node)
-  g_tw_lp_offset = g_tw_my_node * g_tw_nlp;
+  g_tw_lp_offset = g_tw_mynode * g_tw_nlp;
   
 #if VERIFY_MAPPING
   prinf("NODE %d: nlp %lld, offset %lld\n", g_tw_mynode, g_tw_nlp, g_tw_lp_offset);
